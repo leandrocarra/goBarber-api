@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "install": "docker run --name database -e POSTGRESS_PASSWORD=docker -p 5432:5432 -d postgres",
-    "migrations": "npx sequelize db:migrate"
+    "installPostgress": "docker run --name database -e POSTGRESS_PASSWORD=docker -p 5432:5432 -d postgres",
+    "installNode": "docker run --name mongobarber -p 27017:27017 -d -t mongo",
+    "migrations": "npx sequelize db:migrate",
+    "bases": "docker start database mongobarber"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,9 @@
     "date-fns": "^2.15.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.0",
     "multer": "^1.4.2",
+    "nodemailer": "^6.4.11",
     "pg": "^8.2.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.0",
