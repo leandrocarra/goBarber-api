@@ -1,10 +1,10 @@
 export default {
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  host: process.env.HOST,
+  port: process.env.PORT,
   secure: false,
   auth: {
-    user: '40d68bb7d23837',
-    pass: '79e1a58817bf5f',
+    user: process.env.USER,
+    pass: process.env.PASS,
   },
   default: {
     from: 'Leleco <semreplay@barbudos.com>',

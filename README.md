@@ -1,11 +1,11 @@
 # goBarber-api
 
-#baixar o docker do postgress
-#dar o nome de database
-#e rodar com docker start database
-
-
 # Ferramentas
   postgress - postbird
   mongo - mongodbcompass
-  redis -
+# Links pra DEV
+  Teste email
+   -https://mailtrap.io
+
+  tracking de erros
+   -https://sentry.io/welcome/
