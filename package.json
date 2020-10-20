@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "queue": "nodemon src/queue.js",
-    "installPostgress": "docker run --name database -e POSTGRESS_PASSWORD=docker -p 5432:5432 -d postgres",
-    "installMongo": "docker run --name mongobarber -p 27017:27017 -d -t mongo",
-    "installRedis": "docker run --name redisbarber -p 6379:6379 -d -t redis:alpine",
-    "installbds": "npm run installPostgress && npm run installMongo && npm run installRedis",
+    "installDocker": "sudo apt install docker.io",
+    "installPostgres": "sudo docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres",
+    "installMongo": "sudo docker run --name mongobarber -p 27017:27017 -d -t mongo",
+    "installRedis": "sudo docker run --name redisbarber -p 6379:6379 -d -t redis:alpine",
+    "installbds": "sudo npm run installPostgres && npm run installMongo && npm run installRedis",
     "migrations": "npx sequelize db:migrate",
     "bases": "docker start database mongobarber redisbarber"
   },
@@ -27,6 +28,7 @@
     "@sentry/node": "^5.22.0",
     "bcryptjs": "^2.4.3",
     "bee-queue": "^1.2.3",
+    "cors": "^2.8.5",
     "date-fns": "^2.15.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
