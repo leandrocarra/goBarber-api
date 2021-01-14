@@ -23,3 +23,6 @@
   * docker ps -a todos os containers
   * docker stop para container
   * docker rm remove o container
+
+
+aula 15 2:00
