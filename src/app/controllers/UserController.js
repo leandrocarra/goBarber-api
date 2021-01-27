@@ -61,7 +61,7 @@ class UserController {
     }
 
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Senhas diferentes' });
+      return res.status(401).json({ error: 'Senhas antiga diferente' });
     }
 
     await user.update(req.body);
